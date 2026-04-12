@@ -8,13 +8,15 @@ df = pd.read_csv("data/coaching_student_final.csv")
 # Dashboard Title --------------------------------------------------------------------------------------------------------------
 st.markdown("""
 <h1 style='text-align: center; color: #4CAF50;'>
-📊 Coaching Performance Analyzer
+📊 Annnual Performance 
 </h1>
 """, unsafe_allow_html=True)
 
 st.write("### Student Data")
 st.dataframe(df)
 
+
+st.divider()
 
 # Show top students----------------------------------------------------------------------------------------------------------------
 st.subheader("🏆 Top 5 Students")
@@ -24,6 +26,9 @@ top_students['Recommendation'] = top_students.apply(
     axis=1
 )
 st.dataframe(top_students)
+
+
+st.divider()
 
 
 # Show weak students---------------------------------------------------------------------------------------------------------------
@@ -84,10 +89,13 @@ if student_name and not filtered_df.empty:
     st.success(student["Recommendation"])
 
 
+st.divider()
+
+
 
 #Charts -------------------------------------------------------
 
-st.write("### Category Distribution")
+st.write("### Performance")
 
 st.bar_chart(df["Category"].value_counts()) 
 
@@ -114,7 +122,7 @@ if student_name and not filtered_df.empty:
 #Students Insights-----------------------------------------------------------------------------------------------------------------------
 
 
-st.subheader("🧠 Insights")
+st.subheader("🧠 Insight on Class")
 
 # Hardest subject
 subject_avg = df[["English", "Hindi", "Maths", "Science", "Social Science", "Computer"]].mean()
