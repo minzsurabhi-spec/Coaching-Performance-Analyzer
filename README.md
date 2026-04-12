@@ -155,7 +155,7 @@ streamlit run dashboard/app.py
 ---
 
 ## 📌 Author
-  Surabhi Minz 
+ ** Surabhi Minz ** 
 ---
 
 ## 💡 Key Learning
